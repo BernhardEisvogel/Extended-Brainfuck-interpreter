@@ -9,5 +9,8 @@ In order to run a "traditional" BF program, the position of the read and write h
 
 # Demonstration
 
-https://github.com/user-attachments/assets/ee8848b3-5fa5-477c-ab83-4fd81569f152
+
+https://github.com/user-attachments/assets/67fcf922-661b-418e-a58f-4627858afb40
+
+
 

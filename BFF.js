@@ -140,10 +140,13 @@ var BrainFuck = new function () {
 
         this.AllocateMemory(document.getElementById('MemorySize').value);
 
+        // enable Buttons
         var stepButton = document.getElementById('StepButton');
         stepButton.disabled = false;
         var runButton = document.getElementById('RunButton');
         runButton.disabled = false;
+        var runAllButton = document.getElementById('RunAllButton');
+        runAllButton.disabled = false;
 
         return true;
     }
@@ -237,7 +240,7 @@ var BrainFuck = new function () {
                         var foundOpeningLoops = 0;
                         var count = 1;
                         
-                        while((foundOpeningLoops < 1) && (count < 1000)) {
+                        while((foundOpeningLoops < 1) && (count < this.program.length)) {
                             
                             this.programPointer++;
                             if (this.programPointer > 255) {
@@ -269,7 +272,7 @@ var BrainFuck = new function () {
                         var foundClosingLoops = 0;
                         var count = 1;
                         
-                        while((foundClosingLoops < 1) && (count < 1000)) {
+                        while((foundClosingLoops < 1) && (count < this.program.length)) {
                             
                             this.programPointer--;
                             
@@ -310,7 +313,9 @@ var BrainFuck = new function () {
             programTable.innerHTML = html;
             BrainFuck.running = false;
             document.getElementById("RunButton").innerText = "Run";
-            alert('Complete!');
+            if(update){
+                alert('Complete!');
+            }
             return false;
         }
 
@@ -334,6 +339,19 @@ var BrainFuck = new function () {
         if (!BrainFuck.Step(true) || !BrainFuck.running){
             return;
         }
-        window.setTimeout(BrainFuck.RunStep, 5);
+        window.setTimeout(BrainFuck.RunStep, 2);
+    }
+    
+    this.RunAll = function () {
+        n = 0;
+        while (n<5000){
+            BrainFuck.Step(false);
+            if(n%13 == 0){
+                var programTable = document.getElementById('ProgramTable');
+                var html = BrainFuck.GenerateTable(this.program, this.programPointer, this.inputPointer, this.dataPointer);
+                programTable.innerHTML = html;
+            }
+            n++;
+        }
     }
 }

@@ -29,6 +29,7 @@
     <BUTTON ID="LoadButton" ONCLICK="BrainFuck.Load(document.getElementById('Program').value.replace(/\s/g, ''));">Load</Button>
     <BUTTON ID="StepButton" ONCLICK="BrainFuck.Step(true);" disabled=>Step</Button>
     <BUTTON ID="RunButton" ONCLICK="BrainFuck.Run();" disabled=>Run</Button>
+    <BUTTON ID="RunAllButton" ONCLICK="BrainFuck.RunAll();" disabled=>Run 5000 Steps</Button>
     <label for="MemorySize">Memory Size:</label>
     <INPUT ID="MemorySize" VALUE="300" ONSUBMIT="BrainFuck.AllocateMemory(document.getElementById('MemorySize').value)"/>
     
@@ -52,7 +53,9 @@
     
     
     <DIV id='ProgramTable'></div>
-
+    <BR/>
+    <BR/>
+    <BR/>
     <div class="footer">
         <p>Bernhard Eisvogel, sandbox for "Computational Life" paper</p>
     </div>

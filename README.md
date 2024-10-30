@@ -6,3 +6,8 @@ It is fully compatible with the usual Brainfuck language.
 # Important!
 
 In order to run a "traditional" BF program, the position of the read and write head on the tape has to be specified such that they do'nt interact with the part where the program is stored.
+
+# Demonstration
+
+https://github.com/user-attachments/assets/ee8848b3-5fa5-477c-ab83-4fd81569f152
+

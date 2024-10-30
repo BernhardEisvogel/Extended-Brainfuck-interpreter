@@ -5,4 +5,4 @@ It is fully compatible with the usual Brainfuck language.
 
 # Important!
 
-In order to run a "traditional" BF program, the position of the read and write head on the tape has to be specified such that they do'#t interact with the part where the program is stored.
+In order to run a "traditional" BF program, the position of the read and write head on the tape has to be specified such that they do'nt interact with the part where the program is stored.

@@ -1,0 +1,61 @@
+<HTML>
+  <HEAD>
+      <!--  // This is an extension and adaption of https://github.com/James-P-D/BrainfuckBrowser -->
+    <LINK REL="stylesheet" TYPE="text/css" HREF="style.css" />
+    <SCRIPT SRC="BFF.js" TYPE="text/javascript" ></SCRIPT>
+    <title>BFF Interpreter</title>
+
+  </HEAD>
+
+  <BODY>
+    <H1>Extended Brainfuck Interpreter (BFF)</H1>
+    
+
+    <p>Program:
+      <SELECT ID="DefaultProgram" onchange="BrainFuck.DefaultProgramSelect(document.getElementById('DefaultProgram').value)">
+        <OPTION VALUE=""></option>
+        <OPTION VALUE="Self Replicator 1">Self Replicator 1</option>
+        <OPTION VALUE="HelloWorld">Hello World</option>
+        <OPTION VALUE="Hello World 2">Hello World 2</option>
+        
+      </SELECT>
+     </p>
+     
+    <TEXTAREA ID="Program" WRAP="HARD" COLS="120" ROWS="8"></TEXTAREA>
+    
+    <BR />
+    
+    <div>
+    <BUTTON ID="LoadButton" ONCLICK="BrainFuck.Load(document.getElementById('Program').value.replace(/\s/g, ''));">Load</Button>
+    <BUTTON ID="StepButton" ONCLICK="BrainFuck.Step(true);" disabled=>Step</Button>
+    <BUTTON ID="RunButton" ONCLICK="BrainFuck.Run();" disabled=>Run</Button>
+    <label for="MemorySize">Memory Size:</label>
+    <INPUT ID="MemorySize" VALUE="300" ONSUBMIT="BrainFuck.AllocateMemory(document.getElementById('MemorySize').value)"/>
+    
+    <label for="programPointer">Program Pointer Start:</label>
+    <INPUT ID="programPointer" VALUE="0"/>
+    
+    <label for="inputPointer">Input Pointer Start:</label>
+    <INPUT ID="inputPointer" VALUE="0"/>
+    
+    <label for="memoryPointer">Data Pointer Start:</label>
+    <INPUT ID="memoryPointer" VALUE="0"/>
+    </div>
+    
+    <div class="legend">
+    <p class="legendElement">Legend: </p>
+    <p class="programPointer legendElement">Program Pointer</p>
+    <p class="inputPointer legendElement">Input Pointer</p>
+    <p class="dataPointer legendElement">Data Pointer</p>
+    
+    </div>
+    
+    
+    <DIV id='ProgramTable'></div>
+
+    <div class="footer">
+        <p>Bernhard Eisvogel, sandbox for "Paradigm of Life" paper</p>
+    </div>
+    
+  </BODY>
+</HTML>  

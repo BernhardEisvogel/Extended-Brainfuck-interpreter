@@ -26,7 +26,7 @@ var BrainFuck = new function () {
                 '[[{.>]-]]-]>.{[[00000';
         }
         else if (defaultProgramSelect == 'Hello World 2') {
-            // From https://github.com/itchyny/brainfuck/blob/master/quine.bf
+            // This one is better understandable than the other hello world example
             document.getElementById('Program').value = `++++++++++[>+++++++>++++++++++>+++>+<<<<-
             ]
             >++{.

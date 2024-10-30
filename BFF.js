@@ -16,8 +16,6 @@ var BrainFuck = new function () {
     const COLUMNS = 60;
     
     this.program = [];
-    this.brackets = {};
-    this.length = 0;
 
     // Load the default programs on selection-change
     this.DefaultProgramSelect = function (defaultProgramSelect) {
